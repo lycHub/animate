@@ -1,6 +1,6 @@
 const path = require('path');
-const HTMLPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
+const HTMLPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -76,7 +76,7 @@ module.exports = {
       template: path.join(__dirname, 'src/index.html')
     })
   ]
-}
+};
 
 
 function resolve (dir) {

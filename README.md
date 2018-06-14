@@ -1,2 +1,3 @@
 # animate
-webpack基础配置----sass babel devServer...
+velocity.js
+http://www.mrfront.com/docs/velocity.js/index.html
