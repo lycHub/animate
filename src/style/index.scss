@@ -1,0 +1,12 @@
+@import "base";
+$mycolor: #fd5513;
+.test{
+  ul{
+    li{
+      border: 1px solid $mycolor;
+      text-align: center;
+      height:20px;
+      line-height: 20px;
+    }
+  }
+}
