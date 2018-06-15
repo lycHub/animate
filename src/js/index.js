@@ -1,8 +1,9 @@
 import 'style/index.scss';
+import Velocity from 'velocity-animate';
 
+window.addEventListener('DOMContentLoaded', function () {
+  const test = document.getElementById("test");
 
- async function f() {
- return await 'dddddd';
- }
-
- f().then(v => console.log(v));
+  // 直接使用预定于动画
+  Velocity(test, 'slideRightIn', { duration: 1000});
+})
