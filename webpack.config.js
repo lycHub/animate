@@ -26,7 +26,7 @@ module.exports = {
     overlay: {
       errors: true,
     },
-    hot: true,
+    // hot: true,
     historyApiFallback: {
       index: '/src/index.html'
     }
