@@ -1,6 +1,6 @@
 const path = require('path');
-const HTMLPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
+const HTMLPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -26,7 +26,7 @@ module.exports = {
     overlay: {
       errors: true,
     },
-    // hot: true,
+    hot: true,
     historyApiFallback: {
       index: '/src/index.html'
     }
@@ -55,14 +55,25 @@ module.exports = {
       test: /\.(gif|jpg|jpeg|png|svg)$/,
       use: [
         {
+          loader: 'file-loader',
+          options: {
+            name: 'assets/[name]-[hash:8].[ext]'
+          }
+        },
+        'image-webpack-loader'
+        /*{
           loader: 'url-loader',
           options: {
-            limit: 1024,
+            // limit: 1024,
             // 静态资源生成的文件目录,与原目录路径统一
-            name: 'resources/[path][name]-[hash:8].[ext]'
+            name: 'assets/[path][name]-[hash:8].[ext]'
           }
-        }
+        }*/
       ]
+    }, {
+      // 在html中加载图片
+      test: /\.(htm|html)$/,
+      loader: 'html-withimg-loader'
     }]
   },
   plugins: [

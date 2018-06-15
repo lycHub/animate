@@ -1,8 +1,11 @@
 import 'style/index.scss';
 
-
- async function f() {
- return await 'dddddd';
- }
-
- f().then(v => console.log(v));
+$(function () {
+  $(document).on('readystatechange', function () {  // 页面加载状态变化时触发
+    // 页面加载状态
+    if (this.readyState === 'complete') {
+      console.log('加载ok');
+      $('.overlay').fadeOut();
+    }
+  });
+})
