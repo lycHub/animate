@@ -12,8 +12,8 @@ $(function () {
       // 避免重复请求
       oImg.onload = null;
       num++;
-      $('.overlay .loading b').text(Number.parseInt(num/len*100) + '%');
-      if (num >= i) $('.overlay').fadeOut();
+      $('.overlay .loading b').text(Math.round(num/len*100) + '%');
+      if (num >= imgs.length - 1) $('.overlay').fadeOut();
     }
 
     oImg.src = imgs[i].src;
