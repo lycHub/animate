@@ -1,13 +1,5 @@
-/* 通用样式 */
-/*设置单位1rem=100px*/
-html {
-    font-size: 625%;
-}
-
-*,
-::before,
-::after {
-    font-size: 0.14rem;
+*, ::before, ::after {
+    font-size: inherit;
     margin: 0;
     padding: 0;
 
