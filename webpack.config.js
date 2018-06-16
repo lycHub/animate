@@ -43,7 +43,9 @@ module.exports = {
         options: {
           sourceMap: true
         }
-      }, {
+      },
+        'postcss-loader',
+      {
         loader: 'sass-loader',
         options: {
           sourceMap: true
@@ -88,7 +90,6 @@ module.exports = {
     })
   ]
 }
-
 
 function resolve (dir) {
   return path.join(__dirname, '.', dir)
