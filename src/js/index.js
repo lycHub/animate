@@ -1,3 +1,6 @@
-import 'style/index.scss';
+import 'style/index';
+import './pageswitch';
 
-console.log(1);
+$(function () {
+  $('#container').PageSwitch();
+})

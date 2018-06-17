@@ -1,7 +1,39 @@
 @import "base";
 
-#box{
-  color: aqua;
-  font-size: 30px;
-  transform: translateY(100px);
+html{
+  height:100%;
+}
+#container{
+  overflow: hidden;
+  .setions{
+    .section{
+      background-color: #000;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: #fff;
+
+      &:first-child{
+        color: crimson;
+      }
+      &:nth-child(2){
+        color: #91bffd;
+      }
+      &:nth-child(3){
+        color: #fdff4d;
+      }
+      &:last-child{
+        color: #ffab15;
+      }
+    }
+
+
+    &.herizontal{ // 横向
+      width: 400%;
+      .section{
+        float: left;
+        width: 25%;
+      }
+    }
+  }
 }

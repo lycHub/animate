@@ -1,13 +1,5 @@
-/* 通用样式 */
-/*设置单位1rem=100px*/
-html {
-    font-size: 625%;
-}
-
-*,
-::before,
-::after {
-    font-size: 0.14rem;
+*, ::before, ::after {
+    height:inherit;
     margin: 0;
     padding: 0;
 
@@ -18,6 +10,10 @@ html {
 
     /* 统一设置文字  sans-serif 移动端 的默认字体 */
     font-family: '微软雅黑', sans-serif;
+
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
 }
 
 /* input标签 去掉默认样式 */
