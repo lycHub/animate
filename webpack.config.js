@@ -9,6 +9,10 @@ module.exports = {
   target: 'web',
   entry: path.join(__dirname, 'src/js/index.js'),
   output: {
+    // chunk可以理解为一个块，即entry中对应的入口
+    // hash指本次打包的hash值，那么所有输出的hash值都一样
+    // chunkhash指本次打包，给每个入口都分配不同的hash值输出
+    // 只有当文件内容改变后，chunkhash才会变化
     filename: 'js/bundle.[hash:8].js',
     path: path.join(__dirname, 'dist')
 
@@ -39,13 +43,17 @@ module.exports = {
     rules: [{
       test: /\.js$/,
       loader: 'babel-loader',
-      exclude: /node_modules/
+
+      // 下面这两个配置可以是正则，或绝对路径，或 绝对路径[]
+      // exclude: /node_modules/,
+      include: [resolve('src'), resolve('node_modules/webpack-dev-server/client')]
     }, {
       test: /\.scss$/,
       use: ['style-loader', {
         loader: 'css-loader',
         options: {
-          sourceMap: true
+          sourceMap: true,
+          minimize: true
         }
       },
         'postcss-loader',
@@ -60,21 +68,22 @@ module.exports = {
     }, {
       test: /\.(gif|jpg|jpeg|png|svg)$/,
       use: [
-        {
+      /*  {
           loader: 'file-loader',
           options: {
             name: 'assets/[name]-[hash:8].[ext]'
           }
-        },
-        'image-webpack-loader'
-        /*{
+        },*/
+        'image-webpack-loader', // 压缩图片
+        {
           loader: 'url-loader',
           options: {
-            // limit: 1024,
-            // 静态资源生成的文件目录,与原目录路径统一
-            name: 'assets/[path][name]-[hash:8].[ext]'
+            // 当url指向的文件<10240b, 就把url进行base64编码，否则丢给file-loader处理
+            limit: 10240,
+            // 静态资源生成的文件目录,与原目录路径统一，但是不会进行编码了
+            name: '[path]/[name]-[hash:8].[ext]'
           }
-        }*/
+        }
       ]
     }, {
       // 在html中加载图片
@@ -99,7 +108,6 @@ module.exports = {
 
       // 压缩配置 https://github.com/kangax/html-minifier#options-quick-reference
       minify: {
-        removeComments,                         // 删注释
         collapseInlineTagWhitespace: true       // 删空格
       }
 
