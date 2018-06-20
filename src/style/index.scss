@@ -1,8 +1,13 @@
 @import "base";
 
-#box{
-  color: aqua;
-  font-size: 30px;
-  transform: translateY(100px);
-  background:url(../assets/a.jpg) no-repeat;
+#canvas{
+  //width: 100%;
+  //height:100%;
+  //overflow: hidden;
+  ul{
+    li{
+      position: absolute;
+      height:auto;
+    }
+  }
 }

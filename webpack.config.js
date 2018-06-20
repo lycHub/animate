@@ -74,14 +74,14 @@ module.exports = {
             name: 'assets/[name]-[hash:8].[ext]'
           }
         },*/
-        'image-webpack-loader', // 压缩图片
+        'image-webpack-loader',
         {
           loader: 'url-loader',
           options: {
             // 当url指向的文件<10240b, 就把url进行base64编码，否则丢给file-loader处理
             limit: 10240,
             // 静态资源生成的文件目录,与原目录路径统一，但是不会进行编码了
-            name: '[path]/[name]-[hash:8].[ext]'
+            // name: '[path]/[name]-[hash:8].[ext]'
           }
         }
       ]
@@ -104,17 +104,7 @@ module.exports = {
       template: 'src/index.html',
 
       // 文件名默认和template一样，当然可以自定义
-      filename: 'index-[hash:8].html',
-
-      // 压缩配置 https://github.com/kangax/html-minifier#options-quick-reference
-      minify: {
-        collapseInlineTagWhitespace: true       // 删空格
-      }
-
-      // 缓存文件默认true  cache: true
-
-
-      // 所有的javascript脚本默认添加在body标签最后面，可以通过inject: 'head'改变
+      filename: 'index.html'
     })
   ]
 }
