@@ -103,13 +103,15 @@ $(function () {
       const self = evt.data.context;
 
       if (self.canSlide) {
+        const lastDis = self.disX;
+
         // <0是左
-        self.disX += evt.touches[0].pageX - self.startX;
+        self.disX = evt.touches[0].pageX - self.startX;
         // console.log(self.disX);
 
         // 偏移后的位置
 
-        $(self.outer).css('transform', `translateX(${self.disX}px)`);
+        $(self.outer).css('transform', `translateX(${lastDis + self.disX}px)`);
       }
     }
 
