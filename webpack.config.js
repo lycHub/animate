@@ -63,7 +63,7 @@ module.exports = {
           sourceMap: true
         }
       }],
-      include: path.resolve(__dirname, 'src'),
+      // include: path.resolve(__dirname, 'src'),
       exclude: path.resolve(__dirname, 'node_modules')
     }, {
       test: /\.(gif|jpg|jpeg|png|svg)$/,
@@ -104,17 +104,7 @@ module.exports = {
       template: 'src/index.html',
 
       // 文件名默认和template一样，当然可以自定义
-      filename: 'index-[hash:8].html',
-
-      // 压缩配置 https://github.com/kangax/html-minifier#options-quick-reference
-      minify: {
-        collapseInlineTagWhitespace: true       // 删空格
-      }
-
-      // 缓存文件默认true  cache: true
-
-
-      // 所有的javascript脚本默认添加在body标签最后面，可以通过inject: 'head'改变
+      filename: 'index.html'
     })
   ]
 }
