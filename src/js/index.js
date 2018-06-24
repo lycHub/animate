@@ -15,6 +15,9 @@ $(function () {
 
   let step = 1;
 
+  // 初始值（逻辑未实现）
+  let initVal = min;
+
 
   // 刻度
   const scale = [1, 3, 5, 7, 9, 11];
