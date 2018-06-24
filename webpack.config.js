@@ -104,7 +104,7 @@ module.exports = {
       template: 'src/index.html',
 
       // 文件名默认和template一样，当然可以自定义
-      filename: 'index-[hash:8].html',
+      filename: 'index.html',
 
       // 压缩配置 https://github.com/kangax/html-minifier#options-quick-reference
       minify: {
