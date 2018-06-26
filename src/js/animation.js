@@ -23,7 +23,7 @@ function next(callback) {
   callback && callback();
 }
 
-export default class Animation{
+class Animation{
 
   constructor(){
     this.taskQueue = [];
@@ -297,4 +297,9 @@ export default class Animation{
       me._runTask();
     }, task.wait) : this._runTask();
   }
+}
+
+
+export default function () {
+  return new Animation();
 }
