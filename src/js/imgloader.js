@@ -15,7 +15,7 @@ let isTimeout = false;
  *当所有图片加载成功后执行回调
  * 如果加载出错，那么超过等待时间(timeout)后，也执行回调
  * */
-export default function loadImage(images, timeout, callback){
+export default function loadImage(images, callback, timeout){
   for (const key in images) {
     if (!images.hasOwnProperty(key)) continue;
 
@@ -94,7 +94,7 @@ function doLoad(item, callback){
     // 图片全加载完执行回调
     // 由于加载图片是个异步过程，等执行到doLoad时，count已经是最大的数了，然后每执行一次doLoad，就--
     // 当--count = 0时，可以任务全部加载
-    console.log(count);
+   // console.log(count);
 
     // 如果加载完并且没有超时，则阻止定时器触发
     if (!--count && !isTimeout){

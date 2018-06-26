@@ -55,7 +55,7 @@ class Animation{
       const me = this;
       taskFn = function (next, time) {
         if (imgUrl) {
-          ele.style.backgroundImage = `url${imgUrl}`;
+          ele.style.backgroundImage = `url(${imgUrl})`;
         }
 
         //获得当前背景图片位置索引
@@ -118,6 +118,7 @@ class Animation{
       return this;
     }
 
+
     this.state = STATE_START;
     this.interval = interval;
     this._runTask();
@@ -153,7 +154,6 @@ class Animation{
       }
     };
     const type = TASK_SYNC;
-
     return this._add(taskFn, type);
   }
 
@@ -236,7 +236,9 @@ class Animation{
 
   // 执行任务
   _runTask(){
-    if (!this.taskQueue || this.state !== STATE_START) return;
+    if (!this.taskQueue || this.state !== STATE_START) {
+      return;
+    };
 
     if (this.index === this.taskQueue.length) {
       this.dispose();
@@ -245,7 +247,6 @@ class Animation{
 
     // 当前任务
     const task = this.taskQueue[this.index];
-
     if (task.type === TASK_SYNC) {
       this._syncTask(task);
     }else {
@@ -262,7 +263,7 @@ class Animation{
     const next = function () {
       // taskFn执行完后继续到下一个任务
       me._next(task);
-    }
+    };
 
     taskFn(next);
   }

@@ -1,7 +1,6 @@
 import 'style/index.scss';
 import rabbit from '@/assets/rabbit-big.png';
-
-// const imgUrl = '';
+import animation from './animation';
 
 const positions = [
   '0 -854',
@@ -14,8 +13,11 @@ const positions = [
 
 const ele = document.getElementById('rabbit');
 
-animation(ele, positions, rabbit);
+animation().loadImage([rabbit]).changePosition(ele, positions, rabbit).repeatForever().start(80);
 
+
+/*
+ animation(ele, positions, rabbit);
 
 function animation(ele, positions, imgUrl) {
   $(ele).css('background', `url(${imgUrl}) no-repeat`);
@@ -31,4 +33,4 @@ function animation(ele, positions, imgUrl) {
     setTimeout(run, 80);
   }
   run();
-}
+}*/

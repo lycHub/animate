@@ -97,7 +97,7 @@ export default class Timeline{
  */
 function startTimeLine(timeline, startTime) {
   timeline.startTime = startTime;
-  nextTick.interval = timeLine.interval;
+  nextTick.interval = timeline.interval;
 
   // 上一次动画的时间
   let lastTick = +new Date();
