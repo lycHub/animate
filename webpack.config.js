@@ -35,9 +35,7 @@ module.exports = {
       errors: true,
     },
     // hot: true,
-    historyApiFallback: {
-      index: '/src/index.html'
-    }
+    historyApiFallback: true
   },
   module: {
     rules: [{
