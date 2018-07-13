@@ -10,6 +10,8 @@ $(function () {
   });
 
   setTimeout(() => {
-    const myScroll = new BScroll(listWrap);
+    const myScroll = new BScroll(listWrap, {
+      startY: -60
+    });
   }, 100);
 });
