@@ -1,8 +1,10 @@
 @import "base";
 
-#box{
-  color: aqua;
-  font-size: 30px;
-  transform: translateY(100px);
-  background:url(../assets/a.jpg) no-repeat;
-}
+li{ float:left; width:200px; border:1px #000 solid; margin:10px;}
+li img{ width:200px;}
+p{ height:20px; border-bottom:1px #333 dashed;}
+#div1{ width:600px; border:1px #000 solid; height:300px; clear:both;}
+.box1{ float:left; width:180px;}
+.box2{ float:left; width:180px;}
+.box3{ float:left; width:180px;}
+#allMoney{ float:right;}
